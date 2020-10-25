@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mynav"
+    app:startDestination="@id/list">
+
+    <fragment
+        android:id="@+id/list"
+        android:name="co.edu.udea.compumovil.gr06_20201.lab1.fragments.list.list"
+        android:label="Lista de Lugares"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_list_to_addd"
+            app:destination="@id/addd" />
+        <action
+            android:id="@+id/action_list_to_update"
+            app:destination="@id/update" />
+        <action
+            android:id="@+id/action_list_to_loginAccess"
+            app:destination="@id/loginAccess" />
+    </fragment>
+    <fragment
+        android:id="@+id/addd"
+        android:name="co.edu.udea.compumovil.gr06_20201.lab1.fragments.add.addd"
+        android:label="Agregar Lugar"
+        tools:layout="@layout/fragment_addd" >
+        <action
+            android:id="@+id/action_addd_to_list"
+            app:destination="@id/list" />
+    </fragment>
+    <fragment
+        android:id="@+id/update"
+        android:name="co.edu.udea.compumovil.gr06_20201.lab1.fragments.update.update"
+        android:label="Actualizar Lugares"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_update_to_list"
+            app:destination="@id/list" />
+        <argument
+            android:name="currentLugar"
+            app:argType="co.edu.udea.compumovil.gr06_20201.lab1.model.Lugar" />
+    </fragment>
+    <activity
+        android:id="@+id/login"
+        android:name="co.edu.udea.compumovil.gr06_20201.lab1.fragments.login.login"
+        android:label="Login"
+        tools:layout="@layout/activity_login" />
+    <activity
+        android:id="@+id/loginAccess"
+        android:name="co.edu.udea.compumovil.gr06_20201.lab1.fragments.login.LoginAccess"
+        android:label="activity_login_access"
+        tools:layout="@layout/activity_login_access" />
+</navigation>
