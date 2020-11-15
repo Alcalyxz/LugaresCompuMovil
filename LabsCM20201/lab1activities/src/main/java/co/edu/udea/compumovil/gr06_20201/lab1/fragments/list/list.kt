@@ -50,7 +50,6 @@ class list : Fragment() {
 
 
 
-
         setHasOptionsMenu(true)
 
         return view;
